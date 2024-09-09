@@ -12,3 +12,4 @@ C:\Users\Admin\source\repos\MyFirstProgram\MyFirstProgram\obj\Debug\net8.0\refin
 C:\Users\Admin\source\repos\MyFirstProgram\MyFirstProgram\obj\Debug\net8.0\MyFirstProgram.pdb
 C:\Users\Admin\source\repos\MyFirstProgram\MyFirstProgram\obj\Debug\net8.0\MyFirstProgram.genruntimeconfig.cache
 C:\Users\Admin\source\repos\MyFirstProgram\MyFirstProgram\obj\Debug\net8.0\ref\MyFirstProgram.dll
+C:\Users\Admin\source\repos\MyFirstProgram\MyFirstProgram\obj\Debug\net8.0\MyFirstProgram.sourcelink.json

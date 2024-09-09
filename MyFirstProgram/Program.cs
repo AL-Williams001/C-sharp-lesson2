@@ -7,19 +7,31 @@ namespace MyFirstProgram
     {
         static void Main (string[] args)
         {
-            Console.Write("Hey!");
-            Console.WriteLine("Hello!");
+            int x; //declaration
+            x = 123; // initialization
 
-            //This is a comment 
-            /*this
-             * is 
-             * a 
-             * multiline
-             * comment
-             */
+            int y = 321; // delcaration + initialization
 
-            Console.WriteLine("Arthur");
-           
+            int z = x + y;
+
+            int age = 21; //whole integer
+            double height = 300.5; // decimal number
+            bool alive = false; // true or false
+            char symbol = '@';
+            String name = "AL";
+
+            Console.WriteLine($"My name is  {name} and my age is {age}");
+            Console.WriteLine($"My height is {height}cm");
+            Console.WriteLine($"Are you alive {alive}");
+            Console.WriteLine($"Your symbol is: {symbol}");
+
+            String username = symbol + name;
+
+            Console.WriteLine($"My username is : {username}");
+
+
+
+
             Console.ReadLine();
         }
     }
