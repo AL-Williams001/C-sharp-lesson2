@@ -7,31 +7,15 @@ namespace MyFirstProgram
     {
         static void Main (string[] args)
         {
-            // type casting = Cvonerting a value to a different date type
-            //                Usefule when we accept user input (string)
-            //                Different date tupes can do different things 
+            Console.WriteLine("What's your name?");
+            String name = Console.ReadLine();
 
-            double a = 3.14;
-            int b = Convert.ToInt32(a);
+            Console.WriteLine("What's your age?");
+            int age = Convert.ToInt32 (Console.ReadLine());
 
 
-            int c = 123;
-            double d = Convert.ToDouble(c);
-
-            int e = 321;
-            String f = Convert.ToString(e);
-
-            string g = "$";
-            char h = Convert.ToChar(g);
-
-            string i = "true";
-            bool j = Convert.ToBoolean(i);
-
-            Console.WriteLine(b.GetType());
-            Console.WriteLine(d.GetType());
-            Console.WriteLine(f.GetType());
-            Console.WriteLine(h.GetType());
-            Console.WriteLine(j.GetType());
+            Console.WriteLine ($"Hello {name}");
+            Console.WriteLine($"You are {age} years old");
 
 
             Console.ReadLine();
