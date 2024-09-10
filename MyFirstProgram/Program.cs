@@ -7,28 +7,15 @@ namespace MyFirstProgram
     {
         static void Main (string[] args)
         {
-            int x; //declaration
-            x = 123; // initialization
+            // constants = immutatble values which are known at a compile time
+            //               and do not ange for the life of the program
 
-            int y = 321; // delcaration + initialization
+            const double pi = 3.14159;
 
-            int z = x + y;
 
-            int age = 21; //whole integer
-            double height = 300.5; // decimal number
-            bool alive = false; // true or false
-            char symbol = '@';
-            String name = "AL";
+           
 
-            Console.WriteLine($"My name is  {name} and my age is {age}");
-            Console.WriteLine($"My height is {height}cm");
-            Console.WriteLine($"Are you alive {alive}");
-            Console.WriteLine($"Your symbol is: {symbol}");
-
-            String username = symbol + name;
-
-            Console.WriteLine($"My username is : {username}");
-
+            Console.WriteLine(pi);
 
 
 
