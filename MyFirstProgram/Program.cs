@@ -7,15 +7,28 @@ namespace MyFirstProgram
     {
         static void Main (string[] args)
         {
-            Console.WriteLine("What's your name?");
-            String name = Console.ReadLine();
+            int friends = 10;
 
-            Console.WriteLine("What's your age?");
-            int age = Convert.ToInt32 (Console.ReadLine());
+            //friends = friends + 2;
+            //friends += 2;
+            //friends++;
+
+            //friends = friends - 1;
+            //friends -= 1;
+            //friends --;
+
+            //friends = friends * 2;
+            //friends *= 2;
+
+            //friends = friends / 2;
+            //friends /= 2;
+
+            int remainder = friends % 3;
 
 
-            Console.WriteLine ($"Hello {name}");
-            Console.WriteLine($"You are {age} years old");
+
+
+            Console.WriteLine(remainder);
 
 
             Console.ReadLine();
