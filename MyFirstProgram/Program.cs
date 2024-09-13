@@ -8,38 +8,37 @@ namespace MyFirstProgram
         static void Main (string[] args)
         {
 
-            //if statement = a basic form of decision making
+            // switch = an effecient alternative to many else if statements
 
-            /*Console.WriteLine("Please enter your age: ");
-            int age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("What day is it today?");
+            String day = Console.ReadLine();
 
-            if (age > 100  )
+           switch (day)
             {
-                Console.WriteLine("You are too old to sign up!");                
-            }
-            else if (age >= 18)
-            {
-                Console.WriteLine("You are now signed up!");
-            }
-            else if (age < 0)
-            {
-                Console.WriteLine("You haven't been born yet!");
-            }
-            else
-            {
-                Console.WriteLine("Must be 18 and above to sign up! ");
-            }*/
-
-            Console.WriteLine("Please enter your name: ");
-            String name = Console.ReadLine();
-
-            if (name != "")
-            {
-                Console.WriteLine($"Your name is {name}");                
-            }
-            else
-            {
-                Console.WriteLine("You did not enter your name!");
+                case "Monday":
+                    Console.WriteLine("It's Monday!");
+                    break;
+                case "Tuesday":
+                    Console.WriteLine("It's Tuesday!");
+                    break;
+                case "Wednesday":
+                    Console.WriteLine("It's Wednesday!");
+                    break;
+                case "Thursday":
+                    Console.WriteLine("It's Thursday!");
+                    break;
+                case "Friday":
+                    Console.WriteLine("It's Friday!");
+                    break;
+                case "Saturday":
+                    Console.WriteLine("It's Saturday!");
+                    break;
+                case "Sunday":
+                    Console.WriteLine("It's Sunday!");
+                    break;
+                default:
+                    Console.WriteLine($"{day} is not a day!");
+                    break;
             }
 
 
