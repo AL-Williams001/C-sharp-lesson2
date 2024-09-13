@@ -8,27 +8,39 @@ namespace MyFirstProgram
         static void Main (string[] args)
         {
 
-            String fullName = "AL WIlliams";
-            String phoneNumber = "123-456-7890";
+            //if statement = a basic form of decision making
 
-            //fullName = fullName.ToUpper();
-            //fullName = fullName.ToLower();
-            //Console.WriteLine(fullName);
+            /*Console.WriteLine("Please enter your age: ");
+            int age = Convert.ToInt32(Console.ReadLine());
 
-            //phoneNumber = phoneNumber.Replace("-", "/");
-            //Console.WriteLine(phoneNumber);
+            if (age > 100  )
+            {
+                Console.WriteLine("You are too old to sign up!");                
+            }
+            else if (age >= 18)
+            {
+                Console.WriteLine("You are now signed up!");
+            }
+            else if (age < 0)
+            {
+                Console.WriteLine("You haven't been born yet!");
+            }
+            else
+            {
+                Console.WriteLine("Must be 18 and above to sign up! ");
+            }*/
 
-            //String userName = fullName.Insert(0,"@");
-            //Console.WriteLine(userName);
+            Console.WriteLine("Please enter your name: ");
+            String name = Console.ReadLine();
 
-            //Console.WriteLine(fullName.Length);
-
-            String firstName = fullName.Substring(0,2);
-            String lastName = fullName.Substring(3, 8);
-            Console.WriteLine(firstName);
-            Console.WriteLine(lastName);
-
-
+            if (name != "")
+            {
+                Console.WriteLine($"Your name is {name}");                
+            }
+            else
+            {
+                Console.WriteLine("You did not enter your name!");
+            }
 
 
             Console.ReadLine();
