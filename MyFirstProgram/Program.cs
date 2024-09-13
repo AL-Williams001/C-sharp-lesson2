@@ -7,19 +7,17 @@ namespace MyFirstProgram
     {
         static void Main (string[] args)
         {
-            double x = 3.99;
-            double y = 5;
+          
+           Random numbers = new Random();
+           int num1 = numbers.Next(1, 7);
+           int num2 = numbers.Next(1, 7);
+           int num3 = numbers.Next(1, 7);
+            //double num = numbers.NextDouble();
 
-            //double a = Math.Pow(x, 2);
-            //double b = Math.Sqrt(x);
-            //double c = Math.Abs (x);
-            //double d = Math.Round(x);
-            //double e = Math.Ceiling (x);
-            //double f = Math.Floor(x);
-            //double g = Math.Max(x, y);
-            double h = Math.Min(x, y);
 
-            Console.WriteLine(h);
+            Console.WriteLine(num1);
+            Console.WriteLine(num2);
+            Console.WriteLine(num3);
 
             Console.ReadLine();
         }
