@@ -8,15 +8,27 @@ namespace MyFirstProgram
         static void Main (string[] args)
         {
 
-            Console.WriteLine("Enter side A: ");
-            double a = Convert.ToDouble(Console.ReadLine());
+            String fullName = "AL WIlliams";
+            String phoneNumber = "123-456-7890";
 
-            Console.WriteLine("Enter side B: ");
-            double b = Convert.ToDouble(Console.ReadLine());
+            //fullName = fullName.ToUpper();
+            //fullName = fullName.ToLower();
+            //Console.WriteLine(fullName);
 
-            double c = Math.Sqrt((a * a) + (b * b));
+            //phoneNumber = phoneNumber.Replace("-", "/");
+            //Console.WriteLine(phoneNumber);
 
-            Console.WriteLine("The hypotenuse is: " + c);
+            //String userName = fullName.Insert(0,"@");
+            //Console.WriteLine(userName);
+
+            //Console.WriteLine(fullName.Length);
+
+            String firstName = fullName.Substring(0,2);
+            String lastName = fullName.Substring(3, 8);
+            Console.WriteLine(firstName);
+            Console.WriteLine(lastName);
+
+
 
 
             Console.ReadLine();
