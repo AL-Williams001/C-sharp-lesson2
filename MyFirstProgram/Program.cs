@@ -7,17 +7,17 @@ namespace MyFirstProgram
     {
         static void Main (string[] args)
         {
-          
-           Random numbers = new Random();
-           int num1 = numbers.Next(1, 7);
-           int num2 = numbers.Next(1, 7);
-           int num3 = numbers.Next(1, 7);
-            //double num = numbers.NextDouble();
 
+            Console.WriteLine("Enter side A: ");
+            double a = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine(num1);
-            Console.WriteLine(num2);
-            Console.WriteLine(num3);
+            Console.WriteLine("Enter side B: ");
+            double b = Convert.ToDouble(Console.ReadLine());
+
+            double c = Math.Sqrt((a * a) + (b * b));
+
+            Console.WriteLine("The hypotenuse is: " + c);
+
 
             Console.ReadLine();
         }
