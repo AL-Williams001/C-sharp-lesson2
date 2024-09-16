@@ -7,23 +7,18 @@ namespace MyFirstProgram
     {
         static void Main (string[] args)
         {
+            //while loop = repeats some code while some condition remains true
 
-            // logical operators = can be used to check if more than 1 condition is true/false
+            
+            String name = "";
 
-            //&& (and)
-            // (or)
-
-            Console.WriteLine("What's the temperature outside?: (C)");
-            double temp = Convert.ToDouble(Console.ReadLine());
-
-            if (temp >= 10 && temp <= 25)
+            while (name == "")
             {
-                Console.WriteLine("It's warm outside!");
+                Console.Write("Enter your name: ");
+                name = Console.ReadLine();
             }
-            else if (temp <= -50 || temp >= 50)
-            {
-                Console.WriteLine("Do not go outside!");
-            }
+
+            Console.WriteLine($"Hello {name}");
 
             Console.ReadLine();
         }
