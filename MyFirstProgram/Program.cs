@@ -7,19 +7,28 @@ namespace MyFirstProgram
     {
         static void Main (string[] args)
         {
-            // for loop = repeats some code a FINITE amount of times 
 
-            /*for (int i = 1; i <= 10; i++)
-            {
-                Console.WriteLine(i);
-            }*/
+            //nested loops = loops inside of another loops
+            //               Used vary. Used a lot in sorting algorithms
 
-            for (int i = 10; i > 0; i--)
+            Console.Write("How many rows?:");
+            int rows = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("How many columns?:");
+            int columns = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("What symbol:");
+            String symbol  = Console.ReadLine();
+
+            for (int i = 0; i < rows; i++)
             {
-                Console.WriteLine(i);
-                
+                for (int j = 0; j < columns; j++)
+                {
+                    Console.Write(symbol);
+                }
+                Console.WriteLine();
+
             }
-            Console.WriteLine("Happy new year!");
 
             Console.ReadLine();
         }
