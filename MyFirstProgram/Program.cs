@@ -8,27 +8,34 @@ namespace MyFirstProgram
         static void Main (string[] args)
         {
 
-            // method = perofrms a section of code, whenever it's called invoked.
-            //          benefit = Let's us reuse code w/o writing it multiple times
-
-            String name = "AL";
-            int age = 23;
+            // return = returns data back to the place where a method is invoked
 
 
-            singHappyBirthday(name, age);
-            
+            double x;
+            double y;
+            double result;
+
+            Console.WriteLine("Enter in number 1: ");
+            x = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter in number 2: ");
+            y = Convert.ToDouble(Console.ReadLine());
+
+            result = Multiply(x, y);
+
+            Console.WriteLine(result);
+
+
             Console.ReadLine();
 
         }
 
-        static void singHappyBirthday (String name, int age)
+        static double Multiply(double x, double y)
         {
-            Console.WriteLine("Happy birthday to you!");
-            Console.WriteLine("Happy birthday to you!");
-            Console.WriteLine($"Happy birthday dear {name}!");
-            Console.WriteLine($"You are {age} years old!");
-            Console.WriteLine("Happy birthday to you!");
-            Console.WriteLine();
+            double z = x * y;
+            return z;
         }
+
+       
     }
 }
