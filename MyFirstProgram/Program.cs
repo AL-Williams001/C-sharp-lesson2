@@ -8,23 +8,15 @@ namespace MyFirstProgram
         static void Main (string[] args)
         {
 
-            // array = a variable that can store multiple values
+            // foreach loop = a simplier way to iterate over an array, but it's less flexible
 
-            String[] cars = new string[3];
-
-            //String[] cars = { "BMW", "Ford", "Corvette" };
-
-            cars[0] = "Tesla";
-            cars[1] = "Ford";
-            cars[2] = "Corvette";
+            String[] cars = { "BMW", "Ford", "Corvette" };       
  
-            
 
-            for(int i = 0; i < cars.Length; i++)
+            foreach (String car in cars)
             {
-                Console.WriteLine(cars[i]);
+                Console.WriteLine(car);
             }
-
 
             Console.ReadLine();
 
