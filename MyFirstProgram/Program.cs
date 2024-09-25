@@ -8,18 +8,27 @@ namespace MyFirstProgram
         static void Main (string[] args)
         {
 
-            // foreach loop = a simplier way to iterate over an array, but it's less flexible
+            // method = perofrms a section of code, whenever it's called invoked.
+            //          benefit = Let's us reuse code w/o writing it multiple times
 
-            String[] cars = { "BMW", "Ford", "Corvette" };       
- 
+            String name = "AL";
+            int age = 23;
 
-            foreach (String car in cars)
-            {
-                Console.WriteLine(car);
-            }
 
+            singHappyBirthday(name, age);
+            
             Console.ReadLine();
 
+        }
+
+        static void singHappyBirthday (String name, int age)
+        {
+            Console.WriteLine("Happy birthday to you!");
+            Console.WriteLine("Happy birthday to you!");
+            Console.WriteLine($"Happy birthday dear {name}!");
+            Console.WriteLine($"You are {age} years old!");
+            Console.WriteLine("Happy birthday to you!");
+            Console.WriteLine();
         }
     }
 }
