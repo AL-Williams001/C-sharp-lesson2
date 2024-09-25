@@ -8,34 +8,28 @@ namespace MyFirstProgram
         static void Main (string[] args)
         {
 
-            // return = returns data back to the place where a method is invoked
+            // method overloading = methods share same name, but different parameters
+            //                      name + parameters = signature
+            //                      methods must have a unique signature
 
+            double total;
 
-            double x;
-            double y;
-            double result;
+            total = Multiply(2, 3, 4);
 
-            Console.WriteLine("Enter in number 1: ");
-            x = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Enter in number 2: ");
-            y = Convert.ToDouble(Console.ReadLine());
-
-            result = Multiply(x, y);
-
-            Console.WriteLine(result);
-
-
+            Console.WriteLine(total);
             Console.ReadLine();
-
         }
 
-        static double Multiply(double x, double y)
+        static double Multiply(double a, double b)
         {
-            double z = x * y;
-            return z;
+            return a * b;
+        }
+        static double Multiply(double a, double b, double c)
+        {
+            return a * b *c;
         }
 
-       
+
+
     }
 }
