@@ -8,46 +8,18 @@ namespace MyFirstProgram
     {
         static void Main (string[] args)
         {
-            // exception = errors that occur during execution
+            // conditional operator = used in conditional assignment if a condition is True/False
 
-            //          try     = try some code that is considered "dangerous"
-            //          catch   = catches and handles exceptions when they occur
-            //          finally = always executes regardless if exceptions is caught or not
+            // (condition) ? x : y
 
+            double temperature = 20;
+            //String message;
 
+            // message = (temperature >= 15) ? "It's warm outside" : "It's cold outside";
 
-            double x;
-            double y;
-            double result;
+            //Console.WriteLine(message);
 
-            try
-            {
-
-                Console.Write("Enter number 1: ");
-                x = Convert.ToDouble(Console.ReadLine());
-
-                Console.Write("Enter number 2: ");
-                y = Convert.ToDouble(Console.ReadLine());
-                result = x / y;
-
-                Console.WriteLine($"result: {result}");
-
-            }
-            catch (FormatException e)
-            {
-                Console.WriteLine("Enter NUMBERS only PLEASE!");
-            }
-            catch (DivideByZeroException e)
-            {
-                Console.WriteLine("You can't divide by ZERO!");
-            }
-            finally
-            {
-                Console.WriteLine("Thanks of visiting!");
-            }
-
-
-
+            Console.WriteLine((temperature >= 15) ? "It's warm outside" : "It's cold outside");
 
             Console.ReadLine ();
         }
