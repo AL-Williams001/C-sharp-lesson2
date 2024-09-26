@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 
 
 namespace MyFirstProgram
@@ -7,28 +8,30 @@ namespace MyFirstProgram
     {
         static void Main (string[] args)
         {
+            // params keyword = a method parameter that takes a variable number of arguments.
+            //                  The parameter type must be a single - dimensional array
 
-            // method overloading = methods share same name, but different parameters
-            //                      name + parameters = signature
-            //                      methods must have a unique signature
-
-            double total;
-
-            total = Multiply(2, 3, 4);
+            double total = CheckOut(3.99, 5.75, 15, 1.00, 10.25);
 
             Console.WriteLine(total);
             Console.ReadLine();
         }
 
-        static double Multiply(double a, double b)
+        static double CheckOut(params double[] prices)
         {
-            return a * b;
-        }
-        static double Multiply(double a, double b, double c)
-        {
-            return a * b *c;
+            double total = 0;
+
+            foreach (double price in prices)
+            {
+                total += price;
+            }
+
+
+            return total;
         }
 
+       
+        
 
 
     }
