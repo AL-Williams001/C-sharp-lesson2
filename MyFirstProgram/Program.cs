@@ -8,28 +8,51 @@ namespace MyFirstProgram
     {
         static void Main (string[] args)
         {
-            // params keyword = a method parameter that takes a variable number of arguments.
-            //                  The parameter type must be a single - dimensional array
+            // exception = errors that occur during execution
 
-            double total = CheckOut(3.99, 5.75, 15, 1.00, 10.25);
+            //          try     = try some code that is considered "dangerous"
+            //          catch   = catches and handles exceptions when they occur
+            //          finally = always executes regardless if exceptions is caught or not
 
-            Console.WriteLine(total);
-            Console.ReadLine();
-        }
 
-        static double CheckOut(params double[] prices)
-        {
-            double total = 0;
 
-            foreach (double price in prices)
+            double x;
+            double y;
+            double result;
+
+            try
             {
-                total += price;
+
+                Console.Write("Enter number 1: ");
+                x = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("Enter number 2: ");
+                y = Convert.ToDouble(Console.ReadLine());
+                result = x / y;
+
+                Console.WriteLine($"result: {result}");
+
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Enter NUMBERS only PLEASE!");
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine("You can't divide by ZERO!");
+            }
+            finally
+            {
+                Console.WriteLine("Thanks of visiting!");
             }
 
 
-            return total;
+
+
+            Console.ReadLine ();
         }
 
+        
        
         
 
