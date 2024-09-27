@@ -8,18 +8,33 @@ namespace MyFirstProgram
     {
         static void Main (string[] args)
         {
-            // conditional operator = used in conditional assignment if a condition is True/False
+            String[] ford = {"Mustang", "F-150", "Explorer"};
+            String[] chevy = {"Corvette", "Camaro", "Silverado"};
+            String[] toyota = {"Corolla", "Camry", "Rav4" };
 
-            // (condition) ? x : y
+            String[,] parkingLot = { {"Mustang", "F-150", "Explorer" }, 
+                                     { "Corvette", "Camaro", "Silverado" }, 
+                                     { "Corolla", "Camry", "Rav4" } 
+                                    };
 
-            double temperature = 20;
-            //String message;
+            parkingLot[0, 2] = "Fusion";
+            parkingLot[2, 0] = "Tacoma";
 
-            // message = (temperature >= 15) ? "It's warm outside" : "It's cold outside";
+            /*foreach(String car in parkingLot)
+            {
+                Console.WriteLine(car);
+            }*/
 
-            //Console.WriteLine(message);
 
-            Console.WriteLine((temperature >= 15) ? "It's warm outside" : "It's cold outside");
+            for(int i = 0; i < parkingLot.GetLength(0); i++)
+            {
+                for(int j = 0; j < parkingLot.GetLength(1); j++)
+                {
+                    Console.Write(parkingLot[i, j] + " ");
+                }
+                Console.WriteLine();
+            } 
+
 
             Console.ReadLine ();
         }
