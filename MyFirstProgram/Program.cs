@@ -8,15 +8,20 @@ namespace MyFirstProgram
     {
         static void Main (string[] args)
         {
-            // constrctors = A special method in a class
-            //               Same name as the class name
-            //               Can be used to assign arguments to fields when creating an object
+            // static = modifier to declare a static memeber, which belongs to the class itself
+            //          rather than to any specific object
+           
 
-            Car car1 = new Car("Ford", "Mustang", 2022, "black");
-            Car car2 = new Car("Chevrolet", "Corvette", 2021, "blue");
+            Car car1 = new Car( "Mustang");
+            Car car2 = new Car( "Corvette");
+            Car car3 = new Car( "Lambo");
 
-            car1.Drive();
-            car2.Drive();
+            Console.WriteLine(Car.numberOfCars);
+
+            Car.StartRace();
+           
+
+
 
             Console.ReadLine ();
         }
@@ -25,25 +30,23 @@ namespace MyFirstProgram
 
     class Car
     {
-        String make;
+       
         String model;
-        int year;
-        String color;
+        public static int numberOfCars;
 
-        public Car(String make, String model, int year, String color)
+
+        
+        public Car ( String model )
         {
-            this.make = make;
             this.model = model;
-            this.year = year;
-            this.color = color;
+            numberOfCars++;
         }
 
-        public void Drive()
+        public static void StartRace()
         {
-            Console.WriteLine($"You drive the {make} {model}");
-            
-            
+            Console.WriteLine("The race has begun!");
         }
+        
     }
 
    
