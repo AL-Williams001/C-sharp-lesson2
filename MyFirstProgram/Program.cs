@@ -8,50 +8,45 @@ namespace MyFirstProgram
     {
         static void Main (string[] args)
         {
-            // object = An instance of a class
-            //          A class can be used as a blueprint to create objects (OOP)
-            //          objects can have a fields & methods (characteristics & actions)
+            // constrctors = A special method in a class
+            //               Same name as the class name
+            //               Can be used to assign arguments to fields when creating an object
 
-            Human human1 = new Human ();
-            Human human2 = new Human();
+            Car car1 = new Car("Ford", "Mustang", 2022, "black");
+            Car car2 = new Car("Chevrolet", "Corvette", 2021, "blue");
 
-            human1.name = "AL";
-            human1.age = 23;
-
-            human2.name = "Art";
-            human2.age = 25;
-
-
-            human1.Eat();
-            human1.Sleep();
-
-
-            human2.Eat();
-            human2.Sleep();
-
+            car1.Drive();
+            car2.Drive();
 
             Console.ReadLine ();
         }
 
     }
 
-    class Human
+    class Car
     {
-        public String name;
-        public int age;
+        String make;
+        String model;
+        int year;
+        String color;
 
-        public void Eat()
+        public Car(String make, String model, int year, String color)
         {
-            Console.WriteLine($"{name} is eating");
+            this.make = make;
+            this.model = model;
+            this.year = year;
+            this.color = color;
         }
 
-        public void Sleep()
+        public void Drive()
         {
-            Console.WriteLine($"{name} is sleeping");
+            Console.WriteLine($"You drive the {make} {model}");
+            
+            
         }
-
-
     }
+
+   
 
     
 }
