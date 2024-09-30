@@ -8,46 +8,55 @@ namespace MyFirstProgram
     {
         static void Main (string[] args)
         {
-            // static = modifier to declare a static memeber, which belongs to the class itself
-            //          rather than to any specific object
-           
+            // overloaded constructors = technique to create multiple constructors,
+            //                           with a different set of parameters.
+            //                           name + parameters = signature
 
-            Car car1 = new Car( "Mustang");
-            Car car2 = new Car( "Corvette");
-            Car car3 = new Car( "Lambo");
+            Pizza pizza = new Pizza("stuffed crsut", "red sauce", "mozzarella");
 
-            Console.WriteLine(Car.numberOfCars);
-
-            Car.StartRace();
-           
 
 
 
             Console.ReadLine ();
         }
 
-    }
-
-    class Car
-    {
-       
-        String model;
-        public static int numberOfCars;
-
-
-        
-        public Car ( String model )
+        class Pizza
         {
-            this.model = model;
-            numberOfCars++;
+            String bread;
+            String sauce;
+            String cheese;
+            String topping;
+
+            public Pizza(String bread, String sauce, String cheese, String topping)
+            {
+                this.bread = bread;
+                this.sauce = sauce;
+                this.cheese = cheese;
+                this.topping = topping;
+            }
+
+            public Pizza(String bread, String sauce, String cheese)
+            {
+                this.bread = bread;
+                this.sauce = sauce;
+                this.cheese = cheese;
+            }
+
+            public Pizza(String bread, String sauce)
+            {
+                this.bread = bread;
+                this.sauce = sauce;
+            }
+
+            public Pizza(String bread)
+            {
+                this.bread = bread;
+            }
         }
 
-        public static void StartRace()
-        {
-            Console.WriteLine("The race has begun!");
-        }
-        
     }
+
+  
 
    
 
