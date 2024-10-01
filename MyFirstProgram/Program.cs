@@ -8,37 +8,47 @@ namespace MyFirstProgram
     {
         static void Main (string[] args)
         {
+            //method overriding = provides a new version of a methos inherited from a parent class
+            //                    inherited method must be: abstract, virtual, or already overriden
+            //                    Used with ToString(), polymorphism
 
-            Car car1 = new Car("Mustang", "red");
+            Dog dog = new Dog();
+            Cat cat = new Cat();
 
-            Car car2 = Copy(car1);
-
-            Console.WriteLine(car2.color + " " + car2.model);
+            dog.Speak();
+            cat.Speak();
+           
 
             Console.ReadLine();
         }
 
-       public static Car Copy(Car car)
+        class Animal
         {
-            return new Car(car.model, car.color);
+            public virtual void Speak()
+            {
+                Console.WriteLine("The animal goes *brrr*");
+            }
         }
+
+        class Dog : Animal
+        {
+            public override void Speak()
+            {
+                Console.WriteLine("The dog goes *woof*");
+            }
+        }
+
+        class Cat : Animal
+        {
+            public override void Speak()
+            {
+                Console.WriteLine("The cat goes *meow*");
+            }
+        }
+
 
     }
 
-    class Car
-    {
-        public string model;
-        public string color;
-
-
-        public Car (string model, string color)
-        {
-            this.model = model;
-            this.color = color;
-        }
-    }
-
-    
 
 
 
