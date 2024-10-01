@@ -9,14 +9,18 @@ namespace MyFirstProgram
         static void Main (string[] args)
         {
 
-            Car[] garage = { new Car("Mustang"), new Car("Corvette"), new Car("Lambo") };
+            Car car1 = new Car("Mustang", "red");
 
-            foreach (Car car in garage)
-            {
-                Console.WriteLine(car.model);
-            }
+            Car car2 = Copy(car1);
+
+            Console.WriteLine(car2.color + " " + car2.model);
 
             Console.ReadLine();
+        }
+
+       public static Car Copy(Car car)
+        {
+            return new Car(car.model, car.color);
         }
 
     }
@@ -24,10 +28,13 @@ namespace MyFirstProgram
     class Car
     {
         public string model;
+        public string color;
 
-        public Car (string model)
+
+        public Car (string model, string color)
         {
             this.model = model;
+            this.color = color;
         }
     }
 
