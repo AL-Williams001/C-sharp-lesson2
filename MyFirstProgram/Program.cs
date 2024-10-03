@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.Design;
 
 
@@ -8,39 +9,62 @@ namespace MyFirstProgram
     {
         static void Main (string[] args)
         {
-            //ToString() = converts an object to its string representation so that it is suitable for display
-           
-           Car car = new Car("Chevy", "Corvette", 2022, "blue");
+            // polymorphism = Greek word that means to "have many formt"
+            //                Objects can be identified by more than one type
+            //                Ex. A Dog is also: Canine, Animal, Organism 
 
-            Console.WriteLine(car);
 
-            Console.ReadLine();
+            Car car = new Car();
+            Bicycle bicycle = new Bicycle();
+            Boat boat = new Boat();
+
+            Vehicle [] vehicles = { car, bicycle, boat };
+
+            foreach (Vehicle vehicle in vehicles)
+            {
+                vehicle.Go();
+            }
+
         }
 
-        class Car
+        class Vehicle
         {
-            String make;
-            String model;
-            int year;
-            String color;
+            public virtual void Go()
+            {
 
-            public Car(String make, String model, int year, String color)
-            {
-                this.make = make;
-                this.model = model;
-                this.year = year;
-                this.color = color;
-            }
-            public override String ToString()
-            {
-                String message = $"This is  a {make} {model}";
-                return message;
             }
         }
 
-        
+        class Car : Vehicle
+        {
+            public override void Go()
+            {
+                Console.WriteLine("The car is moving!");
+            }
+        }
 
-    
+        class Bicycle : Vehicle
+        {
+            public override void Go()
+            {
+                Console.WriteLine("The bicycle is moving!");
+            }
+        }
+
+        class Boat : Vehicle
+        {
+            public override void Go()
+            {
+                Console.WriteLine("The boat is moving!");
+            }
+        }
+
+
+
+
+
+
+
 
 
     }
