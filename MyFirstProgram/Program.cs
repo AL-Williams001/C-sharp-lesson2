@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.Design;
+using System.Collections.Generic;
 
 
 namespace MyFirstProgram
@@ -9,80 +10,39 @@ namespace MyFirstProgram
     {
         static void Main (string[] args)
         {
-            // interface = defines a "contract" that all the classes inheriting from should follow
+            // List = data structure that represents a list of objects that can be accessed by the index.
+            //        Similat to array, but can dynamically increase/decrease in size
+            //        using System.Collections.Generic;
 
-           //              An interface declares "What a class should have"
-           //              An inheriting class defines "how it should do it"
-
-
-          //               Benefit = security + multiple inheritance + "plug-and-play"
            
-            
-            Rabbit rabbit = new Rabbit ();
-            Hawk hawk = new Hawk ();
-            Fish fish = new Fish ();
+            List<String> food = new List<String> ();
 
-            hawk.Hunt();
+            food.Add("fries");
+            food.Add("pizza");
+            food.Add("hamburger");
+            food.Add("hotdog");
+            food.Add("fries");// add method
 
-            rabbit.Flee();
+            //food.Remove("fries"); remove method
+            //food.Insert(0, "sushi");  insert method
+            //Console.WriteLine(food.Count); count property
+            //Console.WriteLine(food.IndexOf("pizza")); IndexOf property
+            //Console.WriteLine(food.LastIndexOf("fries")); Last IndexOf property
+            //Console.WriteLine(food.Contains("pizza")); Contains method
+            //food.Sort (); Sorth method
+            //food.Reverse(); Reverse method
+            //food.Clear ();
 
-            fish.Hunt();
-            fish.Flee();
+            String[] foodArray = food.ToArray (); //to declare into an array
 
 
+            foreach (String item in food)
+            {
+                Console.WriteLine(item);
+            }
 
-            
             Console.ReadLine ();
         }
-
-        interface IPrey
-        {
-            void Flee();
-        }
-
-        interface IPreditor
-        {
-            void Hunt();
-        }
-
-        class Rabbit : IPrey
-        {
-            public void Flee()
-            {
-                Console.WriteLine("The rabbit runs away");
-            }
-        }
-
-        class Hawk : IPreditor
-        {
-            public void Hunt()
-            {
-                Console.WriteLine("The is hawk hunting for food");
-            }
-        }
-
-        class Fish : IPreditor, IPrey
-        {
-            public void Flee()
-            {
-                Console.WriteLine("The small fish swims away");
-            }
-
-            public void Hunt()
-            {
-                Console.WriteLine("The big fish is searching for a smaller fish");
-            }
-        }
-
-
-
-
-
-
-
-
-
-
 
 
 
