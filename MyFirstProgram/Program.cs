@@ -10,36 +10,23 @@ namespace MyFirstProgram
     {
         static void Main (string[] args)
         {
-            // List = data structure that represents a list of objects that can be accessed by the index.
-            //        Similat to array, but can dynamically increase/decrease in size
-            //        using System.Collections.Generic;
 
-           
-            List<String> food = new List<String> ();
+            List<Player> players = new List<Player>();
 
-            food.Add("fries");
-            food.Add("pizza");
-            food.Add("hamburger");
-            food.Add("hotdog");
-            food.Add("fries");// add method
-
-            //food.Remove("fries"); remove method
-            //food.Insert(0, "sushi");  insert method
-            //Console.WriteLine(food.Count); count property
-            //Console.WriteLine(food.IndexOf("pizza")); IndexOf property
-            //Console.WriteLine(food.LastIndexOf("fries")); Last IndexOf property
-            //Console.WriteLine(food.Contains("pizza")); Contains method
-            //food.Sort (); Sorth method
-            //food.Reverse(); Reverse method
-            //food.Clear ();
-
-            String[] foodArray = food.ToArray (); //to declare into an array
+           /* Player player1 = new Player("AL");
+            Player player2 = new Player("Art");
+            Player player3 = new Player("Arthur");*/
 
 
-            foreach (String item in food)
+            players.Add(new Player("AL"));
+            players.Add(new Player("Art"));
+            players.Add(new Player("Arthur"));
+
+            foreach (Player player in players)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(player);
             }
+
 
             Console.ReadLine ();
         }
@@ -47,9 +34,25 @@ namespace MyFirstProgram
 
 
 
+
+
+
     }
 
+    class Player
+    {
+        public String username;
 
+        public Player(String username)
+        {
+            this.username = username;
+        }
+
+        public override string ToString()
+        {
+            return username;
+        }
+    }
 
 
 
