@@ -11,26 +11,51 @@ namespace MyFirstProgram
         static void Main (string[] args)
         {
 
-            List<Player> players = new List<Player>();
+            //getters & setters = add security to fields by encapsilation 
+            //                    They're accessors found within properties
 
-           /* Player player1 = new Player("AL");
-            Player player2 = new Player("Art");
-            Player player3 = new Player("Arthur");*/
+            //properties = combine aspects of both fields and methoods (share name with a field)
+            //get accessor = used to return the property value
+            //get accessor = used to assign a new value
+            // value keyword = defines the value being assigned by the set (parameter)
 
+            Car car = new Car(400);
 
-            players.Add(new Player("AL"));
-            players.Add(new Player("Art"));
-            players.Add(new Player("Arthur"));
+            car.Speed = 1000000000;
 
-            foreach (Player player in players)
-            {
-                Console.WriteLine(player);
-            }
+            Console.WriteLine(car.Speed);
+
 
 
             Console.ReadLine ();
         }
 
+        class Car
+        {
+            private int speed;
+
+            public Car(int speed)
+            {
+                Speed = speed;
+            }
+
+            public int Speed
+            {
+                get { return speed; } // get accessor = read
+
+                set
+                {
+                    if(value > 500)
+                    {
+                        speed = 500;
+                    }
+                    else
+                    {
+                    speed = value;
+                    }
+                }
+            } 
+        }
 
 
 
@@ -39,21 +64,7 @@ namespace MyFirstProgram
 
     }
 
-    class Player
-    {
-        public String username;
-
-        public Player(String username)
-        {
-            this.username = username;
-        }
-
-        public override string ToString()
-        {
-            return username;
-        }
-    }
-
+   
 
 
 
