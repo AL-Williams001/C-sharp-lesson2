@@ -11,63 +11,36 @@ namespace MyFirstProgram
         static void Main (string[] args)
         {
 
-            // enums = special "class" that contains a set of name integer constants
-            //         Use enums when you have values that you know will not change
-            //         To get the integet value from an item, you must explicitly convert to an int
+            // generic = "not specific to a particular data type"
+            //            add <T> to: classes, methods, fields, etc.
+            //            allows for code reusabilty for different data types
 
-            //         name = integer
+            int[] intArray = { 1, 2, 3 };
+            double[] doubleArray = { 1.0, 2.0, 3.0 };
+            String[] stringArray = { "1", "2", "3" };
 
-            //Console.WriteLine($"{Planets.Mercury} is planet # {(int)Planets.Mercury}");
-            //Console.WriteLine($"{Planets.Pluto} is planet # {(int)Planets.Pluto}");
-
-            String name = PlanetRadius.Earth.ToString();
-            int radius = (int)PlanetRadius.Earth;
-            double volume = Volume(PlanetRadius.Earth);
-
-            Console.WriteLine($"planet: {name}");
-            Console.WriteLine($"radius: {radius}km");
-            Console.WriteLine($"volume: {volume}km^3");
-
+            displayElements(intArray);
+            displayElements(doubleArray);
+            displayElements(stringArray);
 
             Console.ReadLine ();
         }
 
-        public static double Volume(PlanetRadius radius)
+     
+
+        public static void displayElements<Thing>(Thing[] array)
         {
-            double volume = (4.0 / 3.0) * Math.PI * Math.Pow((int)radius, 3);
-            return volume;
+            foreach (Thing item in array)
+            {
+                Console.Write($"{item} ");
+            }
+            Console.WriteLine();
         }
 
- 
+
+
     }
 
-    enum Planets
-    {
-        Mercury = 1, 
-        Venus = 2,
-        Earth = 3,
-        Mars = 4,
-        Jupiter = 5,
-        Saturn = 6,
-        Uranus = 7,
-        Neptune = 8,
-        Pluto = 9,
-    }
-
-    enum PlanetRadius
-    {
-        Mercury = 2439,
-        Venus = 6051,
-        Earth = 6371,
-        Mars = 3389,
-        Jupiter = 69911,
-        Saturn = 58232,
-        Uranus = 25362,
-        Neptune = 24622,
-        Pluto = 1188,
-    }
-
-    
    
 
 
