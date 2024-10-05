@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.Design;
 using System.Collections.Generic;
+using System.Threading;
 
 
 namespace MyFirstProgram
@@ -11,37 +12,57 @@ namespace MyFirstProgram
         static void Main (string[] args)
         {
 
-            // generic = "not specific to a particular data type"
-            //            add <T> to: classes, methods, fields, etc.
-            //            allows for code reusabilty for different data types
+            // thread = an execution path of a program
+            //          We can use multiple threads to perform,
+            //          different taskas of our program at the same time.
+            //          Current thread running is "main" thread
+            //          using System.Threading;
 
-            int[] intArray = { 1, 2, 3 };
-            double[] doubleArray = { 1.0, 2.0, 3.0 };
-            String[] stringArray = { "1", "2", "3" };
+            Thread mainThread = Thread.CurrentThread;
+            mainThread.Name = "Main Thread";
+            //Console.WriteLine(mainThread.Name);
 
-            displayElements(intArray);
-            displayElements(doubleArray);
-            displayElements(stringArray);
+            Thread thread1 = new Thread(CountDown);
+            Thread thread2 = new Thread(CountUp);
+            thread1.Start();
+            thread2.Start();
+
+
+
+            Console.WriteLine($"{mainThread.Name} is complete!");
 
             Console.ReadLine ();
         }
 
-     
-
-        public static void displayElements<Thing>(Thing[] array)
+        public static void CountDown()
         {
-            foreach (Thing item in array)
+            for (int i = 10; i >= 0; i--)
             {
-                Console.Write($"{item} ");
+                Console.WriteLine($"Timer #1: {i} seconds");
+                Thread.Sleep(1000);
             }
-            Console.WriteLine();
+            Console.WriteLine("Timer number #1 is complete!");
         }
+
+        public static void CountUp()
+        {
+            for (int i = 0; i <= 10; i++)
+            {
+                Console.WriteLine($"Timer #2: {i} seconds");
+                Thread.Sleep(1000);
+            }
+            Console.WriteLine("Timer number #2 is complete!");
+        }
+
+
+
+
 
 
 
     }
 
-   
+
 
 
 
