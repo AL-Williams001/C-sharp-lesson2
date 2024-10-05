@@ -11,33 +11,63 @@ namespace MyFirstProgram
         static void Main (string[] args)
         {
 
-            // Auto-Implemented properties = shortcut when no additional logic is required in the property
-            //                               you do not have to define a field for a property
-            //                               you only have to write get; and/or set; inside the property
+            // enums = special "class" that contains a set of name integer constants
+            //         Use enums when you have values that you know will not change
+            //         To get the integet value from an item, you must explicitly convert to an int
 
+            //         name = integer
 
-            Car car = new Car("Ford");
+            //Console.WriteLine($"{Planets.Mercury} is planet # {(int)Planets.Mercury}");
+            //Console.WriteLine($"{Planets.Pluto} is planet # {(int)Planets.Pluto}");
 
-            Console.WriteLine(car.Model);
+            String name = PlanetRadius.Earth.ToString();
+            int radius = (int)PlanetRadius.Earth;
+            double volume = Volume(PlanetRadius.Earth);
+
+            Console.WriteLine($"planet: {name}");
+            Console.WriteLine($"radius: {radius}km");
+            Console.WriteLine($"volume: {volume}km^3");
 
 
             Console.ReadLine ();
         }
 
+        public static double Volume(PlanetRadius radius)
+        {
+            double volume = (4.0 / 3.0) * Math.PI * Math.Pow((int)radius, 3);
+            return volume;
+        }
+
  
     }
 
-    class Car
+    enum Planets
     {
-
-       public String Model { get; set; }
-
-        public Car(String model)
-        {
-            this.Model = model;
-        }
+        Mercury = 1, 
+        Venus = 2,
+        Earth = 3,
+        Mars = 4,
+        Jupiter = 5,
+        Saturn = 6,
+        Uranus = 7,
+        Neptune = 8,
+        Pluto = 9,
     }
 
+    enum PlanetRadius
+    {
+        Mercury = 2439,
+        Venus = 6051,
+        Earth = 6371,
+        Mars = 3389,
+        Jupiter = 69911,
+        Saturn = 58232,
+        Uranus = 25362,
+        Neptune = 24622,
+        Pluto = 1188,
+    }
+
+    
    
 
 
